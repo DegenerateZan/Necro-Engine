@@ -1,6 +1,7 @@
 #include "include/raylib.h"
 #include "iostream"
 #include "ctime"
+#include "unistd.h"
 //#include "CImg.h" // The reason i use this Library is bcus lack of my knowledge of raylib
 
 
@@ -22,10 +23,15 @@ void splashscreen(int width , int height,Texture2D logo,Vector2 middleposition){
     // in order to resize on a right value i need to get the sie of the texture first
     //for (float timedraw = 0.0f; timedraw <= 1.0f; timedraw += 0.1f){
     
-    time_t detik;
-    while (detik <= 1){
+    
         DrawTextureEx(logo, middleposition, 0, 0.5f, RAYWHITE);
-    }
+        
+        
+        int fontsize = 30;
+        DrawText("this app will be closed in 2 seconds", 0, 50, fontsize , RED);
+        
+
+        return;
 }
 
 int main(void)
@@ -46,13 +52,20 @@ int main(void)
             DrawText("Version : Alpha 0.0.1", 0, verlocX, 15, BLACK);
             DrawFPS(llayar - 80,tlayar - 30);
             splashscreen(llayar, tlayar, logo, middleposition);
+                
+            
             ClearBackground(WHITE);
         EndDrawing();
     }
 
 
+
     UnloadTexture(logo);
     CloseWindow();
+
+   
+
+
 
     return 0;
 }
