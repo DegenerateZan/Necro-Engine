@@ -1,5 +1,5 @@
 # Necro-Engine
-<img src="/build/resource/necrologo.png" style="background-color: white">
+<img src="necrologo.png">
 Necro Engine is a visual novel/2d platform game engine written on top of raylib
 
 
